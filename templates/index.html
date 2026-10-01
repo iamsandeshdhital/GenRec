@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenRec - LLM-Backed Recommendation Ranker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-magic"></i>
+            <span>GenRec</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/demo"><i class="fas fa-play"></i> Demo</a></li>
+        </ul>
+    </nav>
+    
+    <main class="main-content">
+        <div class="hero">
+            <h1><i class="fas fa-magic"></i> GenRec</h1>
+            <p class="subtitle">LLM-Backed Recommendation Ranker</p>
+            <p class="description">
+                A paradigm shift from feature engineering to context engineering,
+                powered by large language models.
+            </p>
+            <div class="cta-buttons">
+                <a href="/demo" class="btn btn-primary btn-lg"><i class="fas fa-play"></i> Run Demo</a>
+                <a href="https://github.com/iamsandeshdhital/GenRec" class="btn btn-secondary btn-lg" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-book"></i> Based On</h3>
+                <p><strong>"GenRec: An LLM-Backed Recommendation Ranker at Netflix"</strong></p>
+                <p>by Ying Li et al., Netflix Research, 2026</p>
+                <p class="arxiv">arXiv:2608.10257v2 [cs.IR]</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-user"></i> Built By</h3>
+                <p><strong>Sandesh Dhital</strong></p>
+                <p>Project Creator & Builder</p>
+                <p><a href="https://github.com/iamsandeshdhital" target="_blank"><i class="fab fa-github"></i> @iamsandeshdhital</a></p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-cogs"></i> Key Features</h3>
+                <ul>
+                    <li>Input Verbalization</li>
+                    <li>Context Engineering</li>
+                    <li>Reward Integration</li>
+                    <li>Prefill-Only Serving</li>
+                    <li>Two-Phase Training</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-chart-line"></i> Results</h3>
+                <p>From the paper's large-scale A/B test:</p>
+                <ul>
+                    <li>Statistically significant gains</li>
+                    <li>Fewer training examples needed</li>
+                    <li>Reduced input signals</li>
+                    <li>Improved offline & online metrics</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="architecture">
+            <h2><i class="fas fa-sitemap"></i> Architecture</h2>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <h4>Phase 1: Domain Adaptation</h4>
+                    <p>Adapt open-source LLM to Netflix data, developing deep understanding of catalog and member behavior.</p>
+                </div>
+                <div class="arch-card">
+                    <h4>Phase 2: Ranking Post-Training</h4>
+                    <p>Post-train with recommendation-ranking specific data, labels, and reward signals.</p>
+                </div>
+                <div class="arch-card">
+                    <h4>Serving: Prefill-Only Inference</h4>
+                    <p>Cost-constrained serving design based on prefill-only inference approach.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="credits">
+            <h2><i class="fas fa-users"></i> Credits</h2>
+            <div class="credits-grid">
+                <div class="credit-section">
+                    <h4>Project Builder</h4>
+                    <p><strong>Sandesh Dhital</strong></p>
+                </div>
+                <div class="credit-section">
+                    <h4>Original Paper Authors</h4>
+                    <p>Ying Li, Shradha Sehgal, Arjun Rao, Rein Houthooft, Yunan Hu, Yaochen Zhu, Sourabh Medapati, Yun Li, Linas Baltrunas, Grace Huang, Ashish Rastogi, Kamelia Aryafar</p>
+                    <p class="affiliation">Netflix Research</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <p>GenRec Implementation by <strong>Sandesh Dhital</strong> | Based on research by Netflix</p>
+    </footer>
+</body>
+</html>
