@@ -98,7 +98,12 @@ Please rank the candidates from most to least relevant. Provide the ranking as a
         for i, candidate in enumerate(candidates, 1):
             title = candidate.get('title', 'Unknown')
             item_type = candidate.get('type', 'title')
-            genre = candidate.get('genre', 'unknown genre')
+            # Handle both 'genre' (singular) and 'genres' (plural)
+            genre = candidate.get('genre', '')
+            if not genre and candidate.get('genres'):
+                genre = ', '.join(candidate.get('genres', []))
+            if not genre:
+                genre = 'unknown genre'
             year = candidate.get('year', '')
             rating = candidate.get('rating', '')
             description = candidate.get('description', '')

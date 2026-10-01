@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - GenRec</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-magic"></i>
+            <span>GenRec</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/demo"><i class="fas fa-play"></i> Demo</a></li>
+            <li><a href="/api-docs"><i class="fas fa-book"></i> API Docs</a></li>
+        </ul>
+    </nav>
+    
+    <main class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-book"></i> API Documentation</h1>
+            <p class="subtitle">GenRec REST API Reference</p>
+        </div>
+        
+        <div class="api-endpoint">
+            <h3><span class="method get">GET</span> /api/health</h3>
+            <p>Health check endpoint.</p>
+            <div class="code-block">
+                <pre><code>{
+  "status": "healthy",
+  "cache_size": 5,
+  "metrics": { ... }
+}</code></pre>
+            </div>
+        </div>
+        
+        <div class="api-endpoint">
+            <h3><span class="method get">GET</span> /api/metrics</h3>
+            <p>Get serving metrics.</p>
+        </div>
+        
+        <div class="api-endpoint">
+            <h3><span class="method post">POST</span> /recommend</h3>
+            <p>Generate recommendations for a user.</p>
+            <h4>Request Body</h4>
+            <div class="code-block">
+                <pre><code>{
+  "user_data": { ... },
+  "interactions": [ ... ],
+  "candidates": [ ... ],
+  "context": { ... }
+}</code></pre>
+            </div>
+            <h4>Response</h4>
+            <div class="code-block">
+                <pre><code>{
+  "recommendations": ["item_1", "item_2"],
+  "scores": { "item_1": 1.0, "item_2": 0.95 },
+  "latency_ms": 2.03,
+  "cache_hit": false
+}</code></pre>
+            </div>
+        </div>
+        
+        <div class="api-endpoint">
+            <h3><span class="method post">POST</span> /api/evaluate</h3>
+            <p>Evaluate rankings against relevance grades.</p>
+        </div>
+        
+        <div class="actions">
+            <a href="/demo" class="btn btn-primary"><i class="fas fa-play"></i> Try Demo</a>
+            <a href="/" class="btn btn-secondary"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <p>GenRec Implementation by <strong>Sandesh Dhital</strong> | Based on research by Netflix</p>
+    </footer>
+</body>
+</html>

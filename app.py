@@ -155,6 +155,12 @@ def demo():
                          interactions=interactions)
 
 
+@app.route('/api-docs')
+def api_docs():
+    """API documentation page"""
+    return render_template('api_docs.html')
+
+
 @app.route('/api/health')
 def health():
     """Health check endpoint"""
